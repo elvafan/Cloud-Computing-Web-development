@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+<body>
+    <img src="{{user_image}}" alt="User Image"><br>
+<button onclick="location.href = '{{url_for('main')}}';" id="main_button" class="button button1" >Main Page</button>
+</body>
+</html>

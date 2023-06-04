@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Keys</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+
+</head>
+<body>
+    {% if keys == null%}
+    <h2>There is no key in the database.</h2>
+    {% else%}
+        <h2>Current Keys:</h2>
+        {% for key in keys %}
+          <ol><a>{{ key }}</a></ol><br>
+        {% endfor %}
+
+    {% endif%}
+    <button onclick="location.href = '{{url_for('main')}}';" id="main_button" class="button button1" >Main Page</button>
+</body>
+</html>

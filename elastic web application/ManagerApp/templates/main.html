@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>ECE 1779 Assignment 2</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+<html>
+<body>
+    <div style="text-align:center">
+    <h1>Simple Image Storage Site -- Group 8</h1>
+    <h2>Manager App</h2>
+    <button onclick="location.href = '{{url_for('manager_stats_page')}}';" id="manager_stats_button" class="button button2" >Aggregate Statistics</button>
+    <br><br><br><br>
+    <button onclick="location.href = '{{url_for('manual_mode_page')}}';" id="manual_mod_button" class="button button2" >Manual Mode</button>
+    <br><br><br><br>
+    <button onclick="location.href = '{{url_for('auto_mode_page')}}';" id="auto_mod_button" class="button button2" >Automatic Mode</button>
+    </body>
+    <br><br><br><br>
+    <form action="{{ url_for('update_manager_config')}}" method="post">
+        <label style="color: teal; font-weight: 500; font-size:x-large;" for="cachesize">Cache Capacity(in MB)(For each node):</label>
+        <input type="text" id = "cachesize" name="cachesize"  />
+        <br>
+        <label for="policy" style="color: teal; font-weight: 500; font-size:x-large;" for="policy">Replacement policy:</label>
+        <select id="policy" name="policy">
+            <option value="random">Random Replacement</option>
+            <option value="LRU">Least Recently Used</option>
+        </select>
+        <br>
+        <input type="submit" value="Configure Policy and Capacity" />
+    </form>
+    <br><br><br><br>
+    <form action="{{ url_for('clear_memcache_allnodes')}}" method="post">
+        <label style="color: teal; font-weight: 500; font-size:x-large;" for="Clear Cache On All Nodes">Clear Cache On All Nodes:</label>
+        <input type="submit" value="Commit" />
+    </form>
+    <br><br><br><br>
+    <form action="{{ url_for('delete_all_data')}}" method="post">
+        <label style="color: teal; font-weight: 500; font-size:x-large;" for="Delete All Application Data">Delete All Application Data:</label>
+        <input type="submit" value="Commit" />
+    </form>
+</div>
+<body>
+</html>

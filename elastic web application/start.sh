@@ -1,0 +1,1 @@
+python3 /home/ubuntu/A2/runBack.py && python3 /home/ubuntu/A2/runFront.py && python3 /home/ubuntu/A2/runManager.py

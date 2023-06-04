@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Mode</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+
+<body>
+    <br>
+
+    <body>
+        <p>Current Pool Size: {{ poolsize }}</p>
+    </body>
+
+    <button onclick="location.href = '{{url_for('manual_mode_increment')}}';" id="incre_button" class="button button2">Increment Pool Size</button>
+    <br>
+    <button onclick="location.href = '{{url_for('manual_mode_decrement')}}';" id="decre_button" class="button button2">Decrement Pool Size</button>
+    <br>
+    <button onclick="location.href = '{{url_for('main')}}';" id="manager_button" class="button button2">Manager Page</button>
+</body>
+
+</html>

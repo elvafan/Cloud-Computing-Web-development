@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Automatic Mode</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+
+<body>
+    Configure a simple auto-scaling policy by setting the following parameters (more details on the auto-scaler in
+    component 2 below):
+    <br>
+    Max Miss Rate threshold (average for all nodes in the pool over the past 1 minute) for growing the pool.
+    <br>
+    Min Miss Rate threshold (average for all nodes in the pool over the past 1 minute) for shrinking the pool.
+    <br>
+    Ratio by which to expand the pool (e.g., expand ratio of 2.0, doubles the number of memcache nodes).
+    <br>
+    Ratio by which to shrink the pool (e.g., shrink ratio of 0.5, shuts down 50% of the current memcache nodes).
+    <br>
+    <form action="{{ url_for('update_auto_mode_config')}}" method="post">
+        <label style="color: teal; font-weight: 500; font-size:x-large;" for="max_missrate_th">Max Miss Rate
+            Threshold:</label>
+        <input type="text" id="max_missrate_th" name="max_missrate_th" />
+        <br>
+        <label style="color: teal; font-weight: 500; font-size:x-large;" for="min_missrate_th">Min Miss Rate
+            Threshold:</label>
+        <input type="text" id="min_missrate_th" name="min_missrate_th" />
+        <br>
+        <label style="color: teal; font-weight: 500; font-size:x-large;" for="expand_ratio">Expand Ratio:</label>
+        <input type="text" id="expand_ratio" name="expand_ratio" />
+        <br>
+        <label style="color: teal; font-weight: 500; font-size:x-large;" for="shrink_ratio">Shrink Ratio:</label>
+        <input type="text" id="shrink_ratio" name="shrink_ratio" />
+        <br>
+        <input type="submit" value="Configure" />
+    </form>
+    <br>
+    <button onclick="location.href = '{{url_for('manager_page')}}';" id="manager_button" class="button button2">Manager
+        Page</button>
+</body>
+
+</html>

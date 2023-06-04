@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stats</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+<body>
+<h2> Current Statistics Over the Past 10 Minutes: </h2>
+
+<button onclick="location.href = '../static/stats/items_in_cache.html'" class="button button2" >Item Number in Cache</button> <br>
+<button onclick="location.href = '../static/stats/total_size.html'" class="button button2" >Occupied Cache Size</button> <br>
+<button onclick="location.href = '../static/stats/hitrate.html'" class="button button2" >Hit Rate</button> <br>
+<button onclick="location.href = '../static/stats/missrate.html'" class="button button2" >Miss Rate</button> <br>
+<button onclick="location.href = '../static/stats/n_requests_served.html'" class="button button2" >Number of Request Served</button> <br>
+
+<br>
+<button onclick="location.href = '{{url_for('main')}}';" id="main_button" class="button button1" >Main Page</button>
+</body>
+</html>

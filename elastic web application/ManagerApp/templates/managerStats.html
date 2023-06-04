@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Stats</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+<body>
+<h2> Current Statistics Over the Past 30 Minutes: </h2>
+
+<br>
+<a href="../static/stats/items_in_cache.html">Item number in Cache</a><br>
+<a href="../static/stats/total_size.html">Occupied cache size</a><br>
+<a href="../static/stats/hitrate.html">Hitrate</a><br>
+<a href="../static/stats/missrate.html">Missrate</a><br>
+
+<br>
+<button onclick="location.href = '{{url_for('main')}}';" id="manager_button" class="button button2" >Manager Page</button>
+</body>
+</html>
