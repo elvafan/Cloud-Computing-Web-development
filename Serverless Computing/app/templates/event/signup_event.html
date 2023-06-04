@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Event Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+<html>
+
+<body>
+
+
+    <div>
+        <h1>Current Available Events</h1>
+        <ul>
+            <form action="{{ url_for('event_query_createdate')}}">
+                Events hold on <input type="date" name="eventDate"/>
+                <input type="submit" value="Search" />
+            </form>
+            <button onclick="location.href = '{{url_for('signup_event_page')}}';" id="sign_up_button"
+                class="button button1" type="submit">
+                See All Available Events
+            </button>
+        </ul>
+        {% for event_title in events %}
+        <br>
+        <img src="data:;base64,{{ images[event_title] }}" alt="User Image" width="200"><br>
+        <br>
+        Event Name: {{event_title}}
+        <table>
+            <tr>
+                <td>
+                    Event Date:
+                </td>
+
+                <td>
+                    {{ events[event_title][0] }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Event Description:
+                </td>
+
+                <td>
+                    {{ events[event_title][1] }}
+                </td>
+            </tr>
+        </table>
+        {% endfor %}
+        
+
+        <form action="{{ url_for('event_load_new_participant')}}">
+            <h2>Book Event</h2>
+            <h3>Event Name</h3>
+            <input type="text" name="new_event_name" />
+            <h3>Your Name</h3>
+            <input type="text" placeholder="Please Enter Your Name" name="new_participant">
+            <h3>Your Contact Info</h3>
+            <input type="text" placeholder="Please Enter Your Phone Number" name="new_contact_info">
+            <br>
+            <br>
+            <input type="submit" value="Sign Up" />
+        </form>
+        <br>
+        <button onclick="location.href = '{{url_for('main')}}';" id="main_button" class="button button1">Main
+            Page</button>
+    </div>
+
+    <body>
+
+</html>

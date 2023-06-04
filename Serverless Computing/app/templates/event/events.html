@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylesheet.css') }}">
+    <style>
+        table {
+            margin: 3pt;
+        }
+    </style>
+</head>
+
+<body>
+    {% for event in events %}
+    <table>
+        <img src="data:;base64,{{ images[event['EventTitle']] }}" alt="User Image" width="200">
+        <br>
+        {% for key in event %}
+        <tr>
+            <td>
+                {{ key }}
+            </td>
+
+            <td>
+                {{ event[key] }}
+            </td>
+        </tr>
+        {% endfor %}
+        <br>
+    </table>
+    {% endfor %}
+
+    </table>
+    <button onclick="location.href = '{{url_for('main')}}';" id="main_button" class="button button1">Main
+        Page</button>
+
+</body>
+
+</html>
