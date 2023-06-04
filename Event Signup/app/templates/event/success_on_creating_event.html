@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+
+<body>
+    <div style="text-align:center">
+        <h2>Successfully Created Your Event!</h2>
+        <br>
+        <br>
+        Please remember your event ID if your would like to cancel.
+        <br>
+        <br>
+        Event ID:
+        <br> 
+        {{eventId}}
+        <br>
+        <br>
+        <button onclick="location.href = '{{url_for('book_event_page')}}';" id="book_event_button" class="button button1">Host Another Event</button>
+        <button onclick="location.href = '{{url_for('main')}}';" id="main_button" class="button button1">Main
+            Page</button>
+    </div>
+</body>
+
+</html>

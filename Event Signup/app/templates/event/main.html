@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Main Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+<html>
+
+<body>
+
+
+    <div style="text-align:center">
+        <h1>Event Management Tool</h1>
+        <ul>
+            <br>
+            <button onclick="location.href = '{{url_for('event_create_table')}}';" id="create_table_button"
+                class="button button1">
+                Create Table
+            </button>
+            <br>
+            <button onclick="location.href = '{{url_for('event_delete_table')}}';" id="delete_table_button"
+                class="button button1">
+                Delete Table
+            </button>
+            <br>
+            <br>
+            <br>
+            <button onclick="location.href = '{{url_for('book_event_page')}}';" id="book_event_button"
+                class="button button1">
+                Host an Event
+            </button>
+            <br>
+            <button onclick="location.href = '{{url_for('signup_event_page')}}';" id="sign_up_button"
+                class="button button1">
+                Sign Up for an Event
+            </button>
+            <br>
+            <br>
+            <button onclick="location.href = '{{url_for('cancel_event_page')}}';" id="cancel_event_button"
+                class="button button1">
+                Cancel an Event
+            </button>
+            <br>
+            <button onclick="location.href = '{{url_for('cancel_participant_page')}}';" id="Unsign_an_Event"
+                class="button button1">
+                Withdraw From an Event
+            </button>
+
+        </ul>
+        <br>
+        <br>
+        <ul>
+            <form action="{{ url_for('event_list_all')}}" method="post">
+                <label for="password">Please enter your admin password to see all data: </label>
+                <br>
+                <input type="text" id="password" name="password"><br><br>
+                <input type="submit" value="List all event data" />
+            </form>
+        </ul>
+    </div>
+
+    <body>
+
+</html>
