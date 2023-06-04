@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Configure MemCache</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+
+</head>
+<body>
+<h2>Configure MemCache</h2>
+<form action="{{ url_for('update_config')}}" method="post">
+            <label style="color: teal; font-weight: 500; font-size:x-large;" for="cachesize">Cache size(in MB):</label>
+            <input type="text" id = "cachesize" name="cachesize"  />
+            <br>
+            <label for="policy" style="color: teal; font-weight: 500; font-size:x-large;" for="policy">Replacement policy:</label>
+            <select id="policy" name="policy">
+                <option value="random">Random Replacement</option>
+                <option value="LRU">Least Recently Used</option>
+            </select>
+            <input type="submit" value="Configure" />
+</form>
+
+<form action="{{ url_for('clear_cache')}}" method="post">
+    <label style="color: teal; font-weight: 500; font-size:x-large;" for="Clear Cache">Clear Cache</label>
+    <input type="submit" value="clear_cache" />
+</form>
+
+<br>
+<button onclick="location.href = '{{url_for('main')}}';" id="main_button" class="button button2" >Main Page</button>
+</body>
+</html>

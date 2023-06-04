@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>ECE 1779 Assignment 1</title>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+<html>
+
+<body>
+<h1>Simple Image Storage Site -- Group 8</h1>
+
+<button onclick="location.href = '{{url_for('upload_page')}}';" id="upload_button" class="button button1">
+    Upload
+</button>
+<br>
+<button onclick="location.href = '{{url_for('display_page')}}';" id="display_button" class="button button1">
+    Display
+</button>
+<br>
+<button onclick="location.href = '{{url_for('keys_page')}}';" id="show_keys_button" class="button button1">
+    Show Keys in Database
+</button>
+<br>
+<button onclick="location.href = '{{url_for('configure_page')}}';" id="configure_button" class="button button1">
+    Configure MemCache
+</button>
+<br>
+<button onclick="location.href = '{{url_for('stats_page')}}';" id="stats_button" class="button button1">
+    Show Statistics
+</button>
+<body>
+</html>

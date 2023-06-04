@@ -1,0 +1,1 @@
+python3 runBack.py & python3 runFront.py

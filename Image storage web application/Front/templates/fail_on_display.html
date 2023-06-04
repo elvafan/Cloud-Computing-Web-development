@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display failed</title>
+        <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+
+</head>
+<body>
+<h2>Key specified is not found, please try again!</h2>
+<button onclick="location.href = '{{url_for('display_page')}}';" id="display_page_button" class="button button2" >Back to Display</button>
+</body>
+</html>
